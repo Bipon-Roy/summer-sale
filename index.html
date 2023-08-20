@@ -49,18 +49,18 @@
             >
                 <!-- Banner-Text -->
                 <div class="space-y-6 lg:space-y-12 text-center">
-                    <h3 class="text-text-main text-lg lg:text-2xl font-medium">---SALE FEVER---</h3>
-                    <h1 class="text-text-main text-2xl lg:text-5xl font-extrabold">
+                    <h3 class="text-text-main text-xl lg:text-2xl font-medium">---SALE FEVER---</h3>
+                    <h1 class="text-text-main text-3xl lg:text-5xl font-extrabold">
                         Purchase TK 200 or <br />
                         above & get <span class="text-main-color">20% off</span>
                     </h1>
                     <div class="flex gap-4 items-center justify-center md:flex-col lg:flex-row">
                         <h4 class="text-text-main font-medium text-xl">Use Promo Code</h4>
-                        <p
-                            class="px-6 py-2 bg-main-color text-white text-lg font-medium rounded-md"
+                        <a
+                            class="px-6 py-2 bg-main-color text-white text-lg font-medium rounded-md cursor-pointer"
                         >
                             SELL200
-                        </p>
+                        </a>
                     </div>
                 </div>
                 <!-- Image -->
@@ -471,6 +471,7 @@
                                     placeholder="Coupon code"
                                     type="text"
                                     id="discount-field"
+                                    required
                                 />
                                 <button
                                     class="bg-text-gray -ml-[6px] rounded-l-none rounded-r-lg text-white py-3 px-5 border font-medium"
@@ -540,11 +541,13 @@
                         </div>
 
                         <div class="flex flex-col items-center mt-8">
-                            <a
-                                href="index.html"
+                            <button
+                                onclick="window.location.reload()"
                                 class="bg-main-color text-white text-lg font-medium rounded-md px-10 py-3"
-                                >Go Home</a
+                                id="btn-home"
                             >
+                                Go Home
+                            </button>
                         </div>
                     </div>
                 </dialog>
