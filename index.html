@@ -56,11 +56,11 @@
                     </h1>
                     <div class="flex gap-4 items-center justify-center md:flex-col lg:flex-row">
                         <h4 class="text-text-main font-medium text-xl">Use Promo Code</h4>
-                        <button
+                        <p
                             class="px-6 py-2 bg-main-color text-white text-lg font-medium rounded-md"
                         >
                             SELL200
-                        </button>
+                        </p>
                     </div>
                 </div>
                 <!-- Image -->
@@ -76,14 +76,17 @@
         <main class="bg-[#F8F8F8]">
             <section class="mx-6">
                 <!-- Main-Container -->
-                <div class="max-w-[1340px] mx-auto flex flex-col lg:flex-row gap-7 pt-6">
+                <div
+                    class="max-w-[1340px] mx-auto flex flex-col lg:flex-row gap-7 pt-6"
+                    id="cart-section"
+                >
                     <section>
                         <!-- Container-1 -->
                         <div class="py-6">
                             <h2 class="text-text-main font-semibold text-4xl mb-6">Kitchenware</h2>
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <!-- Card-1 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-5 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod1.png" alt="Product" class="" />
                                     </figure>
@@ -124,7 +127,7 @@
                                 </div>
 
                                 <!-- Card-2 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-8 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod2.png" alt="Product" class="" />
                                     </figure>
@@ -164,7 +167,7 @@
                                 </div>
 
                                 <!-- Card-3 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-8 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod3.png" alt="Product" class="" />
                                     </figure>
@@ -209,7 +212,7 @@
                             <h2 class="text-text-main font-semibold text-4xl mb-6">Sportswear</h2>
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <!-- Card-1 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-12 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod4.png" alt="Product" class="" />
                                     </figure>
@@ -250,7 +253,7 @@
                                 </div>
 
                                 <!-- Card-2 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-6 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod5.png" alt="Product" class="" />
                                     </figure>
@@ -290,7 +293,7 @@
                                 </div>
 
                                 <!-- Card-3 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-8 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod6.png" alt="Product" class="" />
                                     </figure>
@@ -335,7 +338,7 @@
                             <h2 class="text-text-main font-semibold text-4xl mb-6">Furniture</h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <!-- Card-1 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-8 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod7.png" alt="Product" class="" />
                                     </figure>
@@ -376,7 +379,7 @@
                                 </div>
 
                                 <!-- Card-2 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-6 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod8.png" alt="Product" class="" />
                                     </figure>
@@ -416,7 +419,7 @@
                                 </div>
 
                                 <!-- Card-3 -->
-                                <div class="card bg-base-100">
+                                <div class="card bg-base-100" onclick="cartCalculation(this)">
                                     <figure class="px-20 py-11 bg-[#1111110D] m-6 rounded-xl">
                                         <img src="./images/prod9.png" alt="Product" class="" />
                                     </figure>
@@ -464,12 +467,15 @@
                             <div class="bg-white px-4 space-y-2 py-4 rounded-lg">
                                 <h3 class="text-text-main text-lg font-semibold">Have coupon?</h3>
                                 <input
-                                    class="input border-gray-200 rounded-r-none w-2/3"
+                                    class="input border-gray-200 rounded-r-none w-2/3 focus:outline-none"
                                     placeholder="Coupon code"
                                     type="text"
+                                    id="discount-field"
                                 />
                                 <button
-                                    class="bg-main-color -ml-[6px] rounded-l-none rounded-r-lg text-white py-3 px-5 border font-medium"
+                                    class="bg-text-gray -ml-[6px] rounded-l-none rounded-r-lg text-white py-3 px-5 border font-medium"
+                                    disabled
+                                    id="btn-discount"
                                 >
                                     Apply
                                 </button>
@@ -479,29 +485,33 @@
                                 <ol
                                     id="cart-list"
                                     class="ml-10 list-decimal text-lg font-semibold space-y-2"
-                                >
-                                    <li>Home Cooker</li>
-                                    <li>Sports Cates</li>
-                                    <li>Home Cooker</li>
-                                </ol>
+                                ></ol>
                                 <div class="divider w-[85%] mx-auto my-1"></div>
                                 <div class="py-1 ml-5 space-y-2">
                                     <h3 class="text-text-main text-lg font-semibold">
-                                        Total Price: <span class="text-text-gray">257.00</span>
+                                        Total Price:
+                                        <span class="text-text-gray" id="total">0.00</span>
+                                        <span class="text-text-gray">TK</span>
                                     </h3>
 
                                     <h3 class="text-text-main text-lg font-semibold">
-                                        Discount: <span class="text-text-gray">257.00</span>
+                                        Discount:
+                                        <span class="text-text-gray" id="discount">0.00</span>
+                                        <span class="text-text-gray">TK</span>
                                     </h3>
 
                                     <h3 class="text-text-main text-lg font-semibold">
-                                        Total: <span class="text-text-gray">257.00</span>
+                                        Total:
+                                        <span class="text-text-gray" id="grand-total">0.00</span>
+                                        <span class="text-text-gray">TK</span>
                                     </h3>
                                 </div>
                                 <div class="divider w-[85%] mx-auto my-2"></div>
                                 <button
                                     onclick="my_modal_1.showModal()"
-                                    class="py-2 bg-main-color text-white text-lg font-medium rounded-md w-[85%] ml-7 md:ml-12 lg:ml-5 my-2"
+                                    class="py-2 bg-text-gray text-white text-lg font-medium rounded-md w-[85%] ml-7 md:ml-12 lg:ml-5 my-2"
+                                    disabled
+                                    id="btn-purchase"
                                 >
                                     Make Purchase
                                 </button>
@@ -540,5 +550,6 @@
                 </dialog>
             </section>
         </main>
+        <script src="./app.js"></script>
     </body>
 </html>
